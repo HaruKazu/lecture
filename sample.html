@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Script-Type" content="text/css" />
 
 <title>【タイトル】</title>
-<script type="text/javascript" src="./lecture1/1_2.js" ></script>
+<script type="text/javascript" src="./lecture1/sample.js"></script>
 </head>
 
 <body>
@@ -24,11 +24,63 @@
 <!--inner --></div>
 <!-- contents --></div>
 <div id="footer">
-<small><img src="../../_shared/img/footer_copy.png" width="147" height="14" alt="(c)H20 space."</small>
+
 <!-- footer --></div>
 
 <script type="text/javascript">
-test()
+hoge6()
 </script>
+<select id="age" name="" multiple>
+	<script type="text/javascript">
+	hoge7()
+	</script>
+</select>
+<select name="" multiple>
+	<script type="text/javascript">
+	hoge8()
+	</script>
+</select>
+<h2>メインメニュー</h2>
+<ul>
+	<script type="text/javascript">
+	hoge9()
+	</script>
+</ul>
+<h2>メインメニュー2</h2>
+<ul>
+	<script type="text/javascript">
+	hoge10()
+	</script>
+</ul>
+<p class="btn">
+<!--<input type="button" value="閉じる"　 onclick="javascript:if(confirm('onclick イベントが発生しました。')) { window.close() }">-->
+<input id="btnClose" type="button" value="閉じる2">
+</p>
+<script type="text/javascript">
+document.write('合計金額は' + numberFormat(2890*5) + '円です');
+</script>
+<p>
+	1,280円の税込み価格は、
+	<script type="text/javascript">
+		var Price = function(price) {
+			this.tax;
+			this.price = price;
+			this.addTax  = function() {
+				this.price += Math.round(this.price * this.tax /100);
+			}
+			this.format = function() {
+				return numberFormat(this.price);
+			}
+		}
+		var thisPrice = new Price(1280);
+		
+		thisPrice.tax = 5;
+		thisPrice.addTax();
+		document.write(thisPrice.format());
+	</script>
+	円です。
+</p>
+<script type="text/javascript" src="./lecture1/event.js"></script>
+
 </body>
 </html>
