@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+<script type="text/javascript" src="js.jquery.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+jquery('#btnClose').bind('click',function() {
+	if (confirm('とじてよろしいですか？'))
+		window.close();
+	} else {
+		alert('閉じるのを中止しました')
+	}
+}
+</script>
+</body>
+</html>
